@@ -1,0 +1,18 @@
+{
+  "findings": [
+    {
+      "file": "campaigns/creditx-launch/groups/premium-spenders/emails/03-who-decides.md",
+      "line": 14,
+      "severity": "medium",
+      "problem": "Suggests Summit Reserve to the whole premium group (770 and up), but Summit Reserve's minimum score is 800. Readers scoring 770-799 are pointed at a card above their band, which breaks the catalog rule that a card is never suggested when its minimum score is above the customer's score.",
+      "fix": "Name a card that fits the whole group, such as Voyager Elite (760+) or Globetrotter Plus (740+), and keep the annual-fee mention. Or use wording with no named card."
+    },
+    {
+      "file": "campaigns/creditx-launch/groups/premium-spenders/emails/04-friendly-reminder.md",
+      "line": 10,
+      "severity": "medium",
+      "problem": "Same issue as 03-who-decides: names Summit Reserve (800+) as an example for a group that starts at 770.",
+      "fix": "Swap in Voyager Elite or Globetrotter Plus, keeping the annual-fee and rates-vary wording, or drop the named card."
+    }
+  ]
+}
