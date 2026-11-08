@@ -1,0 +1,25 @@
+first_name,last_name,email,group,joined_on,consent
+Ayesha,Khan,ayesha.khan@example.com,credit-builders,2026-09-14,waitlist form
+Marcus,Reed,marcus.reed@example.com,credit-builders,2026-09-18,waitlist form
+Priya,Nair,priya.nair@example.com,credit-builders,2026-09-25,waitlist form
+Daniel,Ortiz,daniel.ortiz@example.com,credit-builders,2026-10-02,waitlist form
+Fatima,Noor,fatima.noor@example.com,credit-builders,2026-10-09,waitlist form
+Kevin,Brooks,kevin.brooks@example.com,credit-builders,2026-10-15,waitlist form
+Sofia,Alvarez,sofia.alvarez@example.com,credit-builders,2026-10-22,waitlist form
+Omar,Haddad,omar.haddad@example.com,credit-builders,2026-10-30,waitlist form
+Hannah,Cole,hannah.cole@example.com,rewards-seekers,2026-09-05,waitlist form
+Raj,Patel,raj.patel@example.com,rewards-seekers,2026-09-12,waitlist form
+Emily,Foster,emily.foster@example.com,rewards-seekers,2026-09-20,waitlist form
+Luis,Moreno,luis.moreno@example.com,rewards-seekers,2026-09-28,waitlist form
+Grace,Kim,grace.kim@example.com,rewards-seekers,2026-10-05,waitlist form
+Brian,Walsh,brian.walsh@example.com,rewards-seekers,2026-10-13,waitlist form
+Nadia,Rahman,nadia.rahman@example.com,rewards-seekers,2026-10-21,waitlist form
+Chris,Dunn,chris.dunn@example.com,rewards-seekers,2026-11-01,waitlist form
+Tom,Becker,tom.becker@example.com,premium-spenders,2026-09-22,waitlist form
+Olivia,Grant,olivia.grant@example.com,premium-spenders,2026-09-08,waitlist form
+Arjun,Mehta,arjun.mehta@example.com,premium-spenders,2026-09-16,waitlist form
+Rachel,Stone,rachel.stone@example.com,premium-spenders,2026-09-30,waitlist form
+Victor,Lang,victor.lang@example.com,premium-spenders,2026-10-07,waitlist form
+Zara,Siddiqui,zara.siddiqui@example.com,premium-spenders,2026-10-17,waitlist form
+Peter,Holt,peter.holt@example.com,premium-spenders,2026-10-26,waitlist form
+Maya,Singh,maya.singh@example.com,premium-spenders,2026-11-03,waitlist form
