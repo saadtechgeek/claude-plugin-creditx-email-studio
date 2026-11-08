@@ -14,3 +14,8 @@ This studio is for planning and writing email campaigns for a small business. Th
 - Write in plain English. No jargon.
 - Never send email to real people. This studio uses made-up people at @example.com only.
 - Ask me before deleting anything.
+
+## Brand
+
+@brand/voice.md
+@brand/cards.md
