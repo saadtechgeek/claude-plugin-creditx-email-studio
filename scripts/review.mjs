@@ -25,7 +25,20 @@ function claudeBinary() {
   return "claude";
 }
 
-const prompt = `Review every email in ${folder} against brand/voice.md and .claude/rules/emails.md. Report only real problems.`;
+let prompt = `Review every email in ${folder} against brand/voice.md and .claude/rules/emails.md. Report only real problems.`;
+
+// A second review of the same folder should not repeat itself: feed it the earlier findings.
+if (existsSync("review/findings.json")) {
+  try {
+    const earlier = JSON.parse(readFileSync("review/findings.json", "utf8"));
+    if (earlier.folder === folder && Array.isArray(earlier.findings) && earlier.findings.length > 0) {
+      prompt += `
+
+These are findings from the last review. Report only problems that are new or still not fixed. Don't repeat ones that were fixed.
+${JSON.stringify(earlier.findings, null, 2)}`;
+    }
+  } catch {}
+}
 
 const run = spawnSync(
   claudeBinary(),
@@ -55,7 +68,7 @@ if (!structured || !Array.isArray(structured.findings)) {
 }
 
 mkdirSync("review", { recursive: true });
-writeFileSync("review/findings.json", JSON.stringify(structured, null, 2) + "\n");
+writeFileSync("review/findings.json", JSON.stringify({ folder, ...structured }, null, 2) + "\n");
 
 const counts = { high: 0, medium: 0, low: 0 };
 for (const finding of structured.findings) counts[finding.severity] += 1;

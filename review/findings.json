@@ -1,18 +1,68 @@
 {
+  "folder": "campaigns/test-bad",
   "findings": [
     {
-      "file": "campaigns/creditx-launch/groups/premium-spenders/emails/03-who-decides.md",
-      "line": 14,
-      "severity": "medium",
-      "problem": "Suggests Summit Reserve to the whole premium group (770 and up), but Summit Reserve's minimum score is 800. Readers scoring 770-799 are pointed at a card above their band, which breaks the catalog rule that a card is never suggested when its minimum score is above the customer's score.",
-      "fix": "Name a card that fits the whole group, such as Voyager Elite (760+) or Globetrotter Plus (740+), and keep the annual-fee mention. Or use wording with no named card."
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 1,
+      "severity": "high",
+      "problem": "Subject uses banned words 'Guaranteed' and 'act now' and promises approval (claims rule 1). Length is fine (43 characters).",
+      "fix": "Use a calm subject such as 'Find a card that fits you'."
     },
     {
-      "file": "campaigns/creditx-launch/groups/premium-spenders/emails/04-friendly-reminder.md",
-      "line": 10,
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 2,
+      "severity": "high",
+      "problem": "Preview says CreditX will 'fix your credit' (claims rule 4) and 'get you approved today' (claims rule 1).",
+      "fix": "Rewrite as 'Compare card options that match where your credit is today.'"
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 6,
+      "severity": "high",
+      "problem": "Body reads a score back: 'Your 480 score is no problem'. This breaks claims rule 5 and implies a lookup and a promise that the score won't matter.",
+      "fix": "Remove the score. Speak to the group, e.g. 'If you're building credit, these options may fit.'"
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 8,
+      "severity": "high",
+      "problem": "'This is your last chance. Don't miss out.' is banned urgency and pressure language.",
+      "fix": "Delete the line or replace it with a calm, no-pressure sentence."
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 12,
       "severity": "medium",
-      "problem": "Same issue as 03-who-decides: names Summit Reserve (800+) as an example for a group that starts at 770.",
-      "fix": "Swap in Voyager Elite or Globetrotter Plus, keeping the annual-fee and rates-vary wording, or drop the named card."
+      "problem": "There are two links where the rules allow exactly one main link. The second, https://creditx.example/hurry, is not the allowed URL.",
+      "fix": "Remove line 12 and keep only the https://creditx.example/advisor link."
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 10,
+      "severity": "low",
+      "problem": "Button text 'Apply now' implies CreditX takes applications and adds pressure.",
+      "fix": "Use 'See my card options'."
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 6,
+      "severity": "high",
+      "problem": "The required exact line 'CreditX Advisor suggests cards. The card issuer makes the approval decision.' is missing. Line 6 only says 'suggests cards that may fit you' and never says who decides (claims rule 6).",
+      "fix": "Add the exact required line to the body."
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 12,
+      "severity": "high",
+      "problem": "There is no sign-off ('Here to help you choose well, / The CreditX Advisor team').",
+      "fix": "Add the sign-off at the end of the email."
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 12,
+      "severity": "high",
+      "problem": "The two-line plain-text footer with {{company_address}} and {{unsubscribe_url}} is missing.",
+      "fix": "Add the two footer lines from emails.md after the sign-off."
     }
   ]
 }

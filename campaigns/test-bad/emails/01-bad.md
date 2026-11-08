@@ -3,7 +3,7 @@ Preview: CreditX Advisor will fix your credit and get you approved today.
 
 Hi {{first_name}},
 
-CreditX Advisor will fix your credit and get you approved for any card you want. Your 480 score is no problem.
+CreditX Advisor suggests cards that may fit you. Your 480 score is no problem.
 
 This is your last chance. Don't miss out.
 
