@@ -81,7 +81,7 @@ Total: 10 emails to waitlist members plus 1 internal report.
 - Emails 5 to 10 are drafted by Fri 2026-12-11 and adjusted using week 1 results.
 - A "has started" flag must be available for the lists in emails 5 to 10. Without it, we would send to people who already started.
 
-**Open space:** one reactive slot is held for Thu 2026-12-24 or Tue 2026-12-29, only if week 1-2 results show a gap. It is not scheduled by default.
+**Open space:** one reactive slot is held for Tue 2026-12-29, only if week 1-2 results show a gap. It is not scheduled by default.
 
 ## 6. Content pieces needed
 
@@ -147,7 +147,7 @@ Any paid email tool or design cost needs a separate decision.
 4. Draft emails 1 to 4, then run brand-review.
 5. Set up the practice send list (made-up @example.com people).
 
-**Decisions needed from the owner:** the "start using" definition, the group split sizes, and whether the open slot on Thu 2026-12-24 / Tue 2026-12-29 should be used.
+**Decisions needed from the owner:** the "start using" definition, the group split sizes, and whether the open slot on Tue 2026-12-29 should be used.
 
 ## Brand check on this plan
 
