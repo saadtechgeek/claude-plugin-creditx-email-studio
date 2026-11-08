@@ -13,6 +13,7 @@ This studio is for planning and writing email campaigns for a small business. Th
 
 - Write in plain English. No jargon.
 - Never send email to real people. This studio uses made-up people at @example.com only.
+- Sending through Resend (the `resend` server in `.mcp.json`) is allowed only to Resend's test addresses (ending in @resend.dev) and to my own email address, which is the `MY_EMAIL` environment variable. A hook (`.claude/hooks/send-guard.mjs`) enforces this, so do not try to get around it.
 - Ask me before deleting anything.
 
 ## Brand
