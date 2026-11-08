@@ -125,3 +125,20 @@ Brand: **CreditX Advisor** (made-up, from project 07 of the AGENTIC projects). I
 - Done: loosened `.claude/hooks/send-guard.mjs` so `MY_EMAIL` also allows a plus variant of itself (same name, same domain, non-empty tag). Everything else is still blocked. Tested 10 cases directly (other Gmail, `sshdtechgen2@gmail.com`, plus on another domain, empty tag, mixed list with a bad bcc, broadcast, unset `MY_EMAIL` all blocked).
 - Still needed from me, the account owner: a real Resend account made with `sshdtechgen@gmail.com` and an API key, kept only in `.claude/settings.local.json` (git-ignored) as `RESEND_API_KEY`, with `RESEND_BASE_URL` set to the real Resend API address.
 - Open question: Resend's free sandbox sender (`onboarding@resend.dev`) is documented to deliver only to the account owner's own address. Plus variants may be rejected. The plan is to test one send first; if it is rejected, send to the exact address with the group in the subject tag instead.
+
+### Optional extra: real emails to my own Gmail (done)
+- Result: real emails now reach `sshdtechgen@gmail.com`. Confirmed in the inbox: "CreditX Advisor: real send test 2" from `onboarding@resend.dev`.
+- Lesson 1, where settings values apply: `.mcp.json` fills `${RESEND_API_KEY:-re_practice}` and `${RESEND_BASE_URL:-http://localhost:4000}` from the environment of the shell that starts Claude, not from `.claude/settings.local.json`. The guard's `MY_EMAIL` does come from `settings.local.json`. My first two "real" test sends (ids `eaeb0b76-...` and `998b58eb-...`) therefore went to the practice server, not to Gmail, even though they showed `email.delivered`. I only found out by asking both servers for the ids: the practice server had them, real Resend did not.
+- Lesson 2, how to tell which server got an email: look the id up on both. A "delivered" status alone does not prove the destination. Real Resend ids are UUIDv7 (start with `01a1...`), practice-server ids are random UUIDs.
+- Lesson 3, send-only keys: my Resend API key is restricted to sending, so reading an email back from real Resend returns 401 `restricted_api_key`. That is fine for sending. Confirm arrival in the inbox.
+- How a real send is run: export `RESEND_API_KEY` and `RESEND_BASE_URL` (read from `settings.local.json`) in the shell for that command only, then run `claude -p --mcp-config .mcp.json`. Without them, Claude uses the practice server, which stays the safe default. In an interactive terminal you must set those two variables yourself before starting `claude`.
+- Lesson 4, plus-addresses: Resend's free sandbox rejects them. Real error: "You can only send testing emails to your own email address (sshdtechgen@gmail.com). To send emails to other recipients, please verify a domain at resend.com/domains, and change the `from` address to an email using this domain." (HTTP 403). Plus-addresses would need a verified domain. The guard still allows plus variants, but Resend will not deliver them without a domain.
+- Fallback used: the three group emails were sent to the exact address `sshdtechgen@gmail.com`, with the group in the subject tag. Body is plain text with `{{first_name}}` replaced (Ayesha, Hannah, Tom); the footer placeholders `{{company_address}}` and `{{unsubscribe_url}}` are still raw text.
+
+| Subject | Resend id |
+|---|---|
+| [credit-builders] CreditX Advisor is ready for you | `01a1bb95-865d-76dd-b311-7435dee0362c` |
+| [rewards-seekers] CreditX Advisor is ready for you | `01a1bb95-940b-7aaa-b9b8-64799d38c428` |
+| [premium-spenders] CreditX Advisor is ready for you | `01a1bb95-a219-7962-b55c-daf9278ad785` |
+
+- Safety: `.claude/settings.local.json` holds the key and is git-ignored. A search of every commit found no key. The sandbox can only deliver to the account owner's address, so no one else can be emailed this way.
