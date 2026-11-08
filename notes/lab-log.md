@@ -119,3 +119,9 @@ Brand: **CreditX Advisor** (made-up, from project 07 of the AGENTIC projects). I
 - Not done, optional: the PDF has a collapsed "send one real email to yourself" extra (not read in full). My planned version is the Gmail plus-address test described under Decisions. It needs a real Resend account and key, `RESEND_BASE_URL` pointing at real Resend, and a deliberate change to the guard to allow plus variants of `MY_EMAIL`. Not started.
 - For your notes: after a send, check it by listing sent emails and looking up each status. The guard still matters after switching from practice mode to a real account, because it limits who can receive mail no matter which server is behind it.
 - Part 2 (send safely, steps 9-11) is complete.
+
+### Optional extra: real emails to my own Gmail (in progress)
+- Goal: actually receive the campaign emails at `sshdtechgen@gmail.com`, using Gmail plus-addresses `sshdtechgen+<group>_<firstname>@gmail.com` (mapping in `notes/real-test-addresses.csv`, git-ignored).
+- Done: loosened `.claude/hooks/send-guard.mjs` so `MY_EMAIL` also allows a plus variant of itself (same name, same domain, non-empty tag). Everything else is still blocked. Tested 10 cases directly (other Gmail, `sshdtechgen2@gmail.com`, plus on another domain, empty tag, mixed list with a bad bcc, broadcast, unset `MY_EMAIL` all blocked).
+- Still needed from me, the account owner: a real Resend account made with `sshdtechgen@gmail.com` and an API key, kept only in `.claude/settings.local.json` (git-ignored) as `RESEND_API_KEY`, with `RESEND_BASE_URL` set to the real Resend API address.
+- Open question: Resend's free sandbox sender (`onboarding@resend.dev`) is documented to deliver only to the account owner's own address. Plus variants may be rejected. The plan is to test one send first; if it is rejected, send to the exact address with the group in the subject tag instead.

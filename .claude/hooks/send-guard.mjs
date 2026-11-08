@@ -29,7 +29,16 @@ const bare = (addr) => {
   return (match ? match[1] : String(addr)).trim().toLowerCase();
 };
 
-const allowed = (addr) => addr.endsWith("@resend.dev") || (myEmail !== "" && addr === myEmail);
+// My own address, or a Gmail-style plus variant of it (name+tag@domain): same name, same domain.
+const isMine = (addr) => {
+  if (myEmail === "") return false;
+  if (addr === myEmail) return true;
+  const [name, domain] = myEmail.split("@");
+  const [addrName, addrDomain] = addr.split("@");
+  return addrDomain === domain && addrName.startsWith(name + "+") && addrName.length > name.length + 1;
+};
+
+const allowed = (addr) => addr.endsWith("@resend.dev") || isMine(addr);
 
 const addressesOf = (message) =>
   ["to", "cc", "bcc"].flatMap((field) => {
@@ -54,7 +63,7 @@ if (SEND_TOOLS.includes(toolName)) {
 
   const bad = addresses.find((addr) => !allowed(addr));
   if (bad) {
-    block(`${bad} is not allowed. Only addresses ending in @resend.dev, or my own email (MY_EMAIL), may receive mail.`);
+    block(`${bad} is not allowed. Only addresses ending in @resend.dev, or my own email (MY_EMAIL, with or without a +tag), may receive mail.`);
   }
 }
 
