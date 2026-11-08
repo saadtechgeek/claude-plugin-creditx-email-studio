@@ -11,7 +11,7 @@ Wondering what using CreditX Advisor is actually like? It comes down to three si
 
 **3. See your suggestions.** We compare options and suggest cards that may fit you and the way you spend.
 
-That is all. It takes a few minutes, and you can stop at any time.
+That is all. It typically takes a few minutes.
 
 [Try the three steps](https://creditx.example/advisor)
 

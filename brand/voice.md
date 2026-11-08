@@ -16,6 +16,7 @@ How that shows up:
 - suggest, compare, fit, match, options, may, typically, depends
 - Plain terms: "annual fee", "interest rate", "cash back", "credit score"
 - "building credit" for people whose scores are low
+- Contractions like "you're" and "it's" are fine. They sound natural, and the required footer already uses one.
 
 ## 3. Words we avoid
 

@@ -3,11 +3,11 @@ Preview: You joined our waitlist. Today you can try it and see which cards may f
 
 Hi {{first_name}},
 
-Thank you for joining the CreditX Advisor waitlist. Today, CreditX Advisor is open.
+Thank you for joining the CreditX Advisor waitlist. CreditX Advisor is now open.
 
-Choosing a credit card can feel like a lot of work. You do not have to compare dozens of them. CreditX Advisor looks at your situation and how you spend, then suggests cards that may fit.
+Choosing a credit card can feel like a lot of work. You do not have to compare dozens of them. You tell us about your situation and how you spend, and CreditX Advisor suggests cards that may fit.
 
-It is quick, and it is yours to use whenever you are ready. There is no pressure and no spreadsheet.
+It typically takes a few minutes, and it is yours to use whenever you are ready. There is no pressure and no spreadsheet.
 
 [Start with CreditX Advisor](https://creditx.example/advisor)
 

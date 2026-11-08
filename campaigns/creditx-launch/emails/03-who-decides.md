@@ -1,5 +1,5 @@
 Subject: Who decides? Here is how it works
-Preview: A clear answer on who approves a card, and how we treat the details you share.
+Preview: A clear, plain answer on who approves a card, and what CreditX Advisor does.
 
 Hi {{first_name}},
 
@@ -7,7 +7,7 @@ Before you try something new with your money, it helps to know who is in charge.
 
 **Who decides?** CreditX Advisor is an advisor, not a bank. We suggest cards that may fit you. The card issuer, the company that offers the card, makes the approval decision. A suggestion from us is never a promise of approval.
 
-**What about your information?** You choose what you share, and we use it to suggest cards. Our emails never state your credit score or hint that we looked it up. If you have a question about your information, reply to this email and we will answer.
+Have a question? Reply to this email.
 
 Rates, fees and limits vary by issuer, so always read the issuer's terms before you apply.
 

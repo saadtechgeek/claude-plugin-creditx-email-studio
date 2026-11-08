@@ -3,11 +3,11 @@ Preview: No rush. CreditX Advisor is open whenever you want a simple card sugges
 
 Hi {{first_name}},
 
-A quick hello as the year winds down. This is a gentle reminder, not a nudge.
+A quick hello.
 
 CreditX Advisor is open whenever you want it. If you would like help choosing a credit card without comparing dozens, we are here. If now is not the right time, that is perfectly fine too.
 
-When you are ready, it takes a few minutes. We ask a few short questions, then suggest cards that may fit you.
+When you are ready, it typically takes a few minutes. We ask a few short questions, then suggest cards that may fit you.
 
 [Start when you are ready](https://creditx.example/advisor)
 
