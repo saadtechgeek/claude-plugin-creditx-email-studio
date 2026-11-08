@@ -102,3 +102,20 @@ Brand: **CreditX Advisor** (made-up, from project 07 of the AGENTIC projects). I
 - Check passed in a fresh session through the real Resend tools: email 01 to Ayesha was blocked (message: "send-guard: blocked. ayesha.khan@example.com is not allowed. Only addresses ending in @resend.dev, or my own email (MY_EMAIL), may receive mail."), the send to `delivered@resend.dev` went through (id `5235f8d1-5ac5-4d18-ad5f-6ed1d5f7d936`), and the send to `MY_EMAIL` went through (id `eb10115d-33f6-4039-b31d-425756e45a9f`). Those two sends reached the practice server only, so nothing left the computer.
 - For your notes: a CLAUDE.md rule asks Claude to behave, and a hook is a guard at the door that checks every letter before it leaves. Claude cannot talk its way past it. Exit code 2 from a hook blocks the action.
 - Exam points: the guide names only `PostToolUse` (for cleaning up tool results) and describes blocking as "tool call interception" without naming the hook. In the product, `PreToolUse` is what blocks, with exit code 2 or a deny decision, and `PostToolUse` cannot block. On the exam, match the behaviour described.
+
+### Step 11: practice launch
+- Sent each group's version of email 01 to `delivered@resend.dev`, with the group in square brackets at the start of the subject and `{{first_name}}` replaced by "there". The other placeholders were left in place.
+
+| Group | Subject | Resend id |
+|---|---|---|
+| credit-builders | [credit-builders] CreditX Advisor is ready for you | `0aa8e12a-3647-4c06-aa79-10e1b5e3242a` |
+| rewards-seekers | [rewards-seekers] CreditX Advisor is ready for you | `5fef4264-feb5-4eee-9c87-3acd370df48c` |
+| premium-spenders | [premium-spenders] CreditX Advisor is ready for you | `637734a9-d29b-486d-8a1e-b9bb4f04ad43` |
+
+- Check passed in a fresh session: all three show `email.delivered`; of the 6 emails the practice server holds, five went to `delivered@resend.dev` and one to the `MY_EMAIL` address (the earlier step 10 test sends), none anywhere else; each sent subject matches its group's `01-launch.md` subject apart from the tag.
+- This step changed no files in the studio, so there is nothing to commit for it besides this log.
+- The practice server keeps its sent list in memory. It is gone when the server stops, so the ids above only exist while that server session is running.
+- Reminder: the footers still carry the raw `{{company_address}}` and `{{unsubscribe_url}}` placeholders, and the link was sent as plain text. Fill these in before any real send.
+- Not done, optional: the PDF has a collapsed "send one real email to yourself" extra (not read in full). My planned version is the Gmail plus-address test described under Decisions. It needs a real Resend account and key, `RESEND_BASE_URL` pointing at real Resend, and a deliberate change to the guard to allow plus variants of `MY_EMAIL`. Not started.
+- For your notes: after a send, check it by listing sent emails and looking up each status. The guard still matters after switching from practice mode to a real account, because it limits who can receive mail no matter which server is behind it.
+- Part 2 (send safely, steps 9-11) is complete.
